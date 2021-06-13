@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.TestMapper">
+	<select id="getSysdate" resultType="Date">
+		select sysdate from dual
+	</select>
+	
+	<insert id="insert">
+		insert into tboard(bno, title, content)
+		VALUES(seq_tboard.nextval, '테스트1', '내용')
+	</insert>
+	
+	<select id="select" resultType="hashmap">
+		select *
+		from tboard
+	</select>
+</mapper>
